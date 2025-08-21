@@ -16,7 +16,7 @@ ABOUT: To establish credibility, build emotional connection, and share the baker
 MENU: To showcase products, provide detailed information, and facilitate ordering decisions while maintaining visual appeal.
 CONTACT: To make it easy for customers to find, visit, and communicate with the bakery while providing multiple contact options.
 
-
+https://github.com/Vincent-UI146/Bakery
 
 
 
