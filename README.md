@@ -10,6 +10,14 @@ GOALS AND OBJECTIVES
 DRIVE FOOT TRAFFIC AND SALES: The primary goal is to get people to physically visit the bakery. Display your location, hours, and phone number on every page
 STREAMLINE ORDERS AND INQUIRIES: Make it easy for customers to give you money for special orders and ask questions. 
 
+WEBSITE PAGES
+HOMEPAGE: The homepage serves as the digital front door of Kea's Bakery, providing an inviting introduction to first-time visitors while offering quick acces to key information for returning customers.
+ABOUT: To establish credibility, build emotional connection, and share the bakery's story, values, and people behind the products.
+MENU: To showcase products, provide detailed information, and facilitate ordering decisions while maintaining visual appeal.
+CONTACT: To make it easy for customers to find, visit, and communicate with the bakery while providing multiple contact options.
+
+
+
 
 
 
