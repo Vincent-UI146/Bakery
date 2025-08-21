@@ -20,8 +20,19 @@ WEBSITE SCREENSHOOTS
 
 ![1000777137](https://github.com/user-attachments/assets/80e884e1-089b-4b1d-95ee-c9e94449ea3e)
 
+![1000777130](https://github.com/user-attachments/assets/9174a320-dd17-4a13-aed2-75488e6af20c)
+
+![1000777142](https://github.com/user-attachments/assets/45bd72d5-5078-47dc-a642-3f8585a238fe)
+
+![1000777141](https://github.com/user-attachments/assets/78dbad5b-d03a-4082-9673-f29f6848adbe)
+
+![1000777138](https://github.com/user-attachments/assets/a04795b3-bc13-48e4-aef4-db9fd1d7608b)
 
 
+
+
+
+GIT LINK
 
 https://github.com/Vincent-UI146/Bakery
 
