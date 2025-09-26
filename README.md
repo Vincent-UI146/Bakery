@@ -102,19 +102,19 @@ https://github.com/Vincent-UI146/Bakery
 ## REFERENCES
 
 
-Amoeboids, 2025 https://amoeboids.com/top-8-useful-changelog-examples/
+Amoeboids, 2025 | Top 8 useful changelog useful examples: https://amoeboids.com/top-8-useful-changelog-examples/
 
 
-GeeksforGeeks, July 28, 2025 https://www.geeksforgeeks.org/css/css-units/
+GeeksforGeeks, July 28, 2025 | CSS-units:  https://www.geeksforgeeks.org/css/css-units/
 
 
-Mozilla https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content
+Mozilla | CSS:Styling the content 2025 Guide: https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content
 
 
-Releasepad T3ch, September 20, 2023 https://www.releasepad.io/the-complete-guide-on-how-to-write-a-good-changelog/
+Releasepad T3ch, September 20, 2023 | The complete guide on how to write a good changelog: https://www.releasepad.io/the-complete-guide-on-how-to-write-a-good-changelog/
 
 
-W3Schools https://www.w3schools.com/Css/css_rwd_intro.asp
+W3Schools | Responsive Web Design-Introduction 2025 Guide: https://www.w3schools.com/Css/css_rwd_intro.asp
 
  
 
