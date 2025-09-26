@@ -102,19 +102,19 @@ https://github.com/Vincent-UI146/Bakery
 ## REFERENCES
 
 
-Amoeboids, 2025 | Top 8 useful changelog useful examples: https://amoeboids.com/top-8-useful-changelog-examples/
+Amoeboids, 2025 | Top 8 useful changelog useful examples: https://amoeboids.com/top-8-useful-changelog-examples/  (Date accessed: 25 September 2025)
 
 
-GeeksforGeeks, July 28, 2025 | CSS-units:  https://www.geeksforgeeks.org/css/css-units/
+GeeksforGeeks, July 28, 2025 | CSS-units:  https://www.geeksforgeeks.org/css/css-units/  (Date accessed: 19 September 2025)
 
 
-Mozilla | CSS:Styling the content 2025 Guide: https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content
+Mozilla | CSS:Styling the content 2025 Guide: https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content  (Date accessed: 19 September 2025)
 
 
-Releasepad T3ch, September 20, 2023 | The complete guide on how to write a good changelog: https://www.releasepad.io/the-complete-guide-on-how-to-write-a-good-changelog/
+Releasepad T3ch, September 20, 2023 | The complete guide on how to write a good changelog: https://www.releasepad.io/the-complete-guide-on-how-to-write-a-good-changelog/  (Date accessed: 25 September 2025)
 
 
-W3Schools | Responsive Web Design-Introduction 2025 Guide: https://www.w3schools.com/Css/css_rwd_intro.asp
+W3Schools | Responsive Web Design-Introduction 2025 Guide: https://www.w3schools.com/Css/css_rwd_intro.asp (Date accessed: 21 September 2025)
 
  
 
