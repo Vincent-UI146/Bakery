@@ -41,6 +41,75 @@ Ravensdale, May 4, 2025 Website Development Cost in South Africa | 2025 Guide ht
 https://github.com/Vincent-UI146/Bakery
 
 
+### CHANGELOG | 26 SEPTEMBER 2025  | KEA'S BAKERY  | PART 2
+
+
+
+| 15 SEPTEMBER 2025 | MONDAY
+* Added the payment page.
+
+| 17 SEPTEMBER 2025 | WEDNESDAY
+* Added required attribute to all mandatory form fields on the payment page.
+* Added ARIA labels to form fields for better accessibility in the payment page.
+
+| 19 SEPTEMBER 2025 | FRIDAY
+* Linked the payment page with the other pages with navigation.
+* Added the styles.css page.
+
+| 21 SEPTEMBER 2025 | SUNDAY
+* Improved the color constrast ratios for better readability.
+* Added Responsive Design on the website and all the pages.
+
+| 22 SEPTEMBER 2025 | MONDAY
+* Fixed the navigation for the homepage and linked it to the other pages.
+* Fixed price calculation errors on the menu page.
+
+| 24 SEPTEMBER 2025 | WEDNESDAY
+* Fixed the credit card format validation.
+* Fixed the expiration date validation.
+
+| 25 SEPTEMBER 2025 | THURSDAY
+* Added the contact information and work hours on the payment page.
+* Started adding the changelog on the readme file.
+
+| 26 SEPTEMBER 2025 | FRIDAY
+* Added the screenshots for responsive design and testing on the readme file.
+* Added the references.
+* 
+
+
+
+
+## SCREENSHOTS OF RESPONSIVE DESIGN
+
+![Alt text](<Screenshot 2025-09-26 111852.png>)
+
+![Alt text](<Screenshot 2025-09-26 111932.png>)
+
+![Alt text](<Screenshot 2025-09-26 112017.png>)
+
+![Alt text](<Screenshot 2025-09-26 111553.png>)
+
+![Alt text](<Screenshot 2025-09-26 111820.png>)
+
+![Alt text](<Screenshot 2025-09-26 111638.png>)
+
+![Alt text](<Screenshot 2025-09-26 113959.png>)
+
+
+## REFERENCES
+
+Amoeboids, 2025 https://amoeboids.com/top-8-useful-changelog-examples/
+
+Mozilla https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content
+
+Releasepad T3ch, September 20, 2023 https://www.releasepad.io/the-complete-guide-on-how-to-write-a-good-changelog/
+
+W3Schools https://www.w3schools.com/Css/css_rwd_intro.asp
+
+ 
+
+
 
 
 
