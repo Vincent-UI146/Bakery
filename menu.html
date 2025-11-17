@@ -3,8 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kea's Bakery | Our Menu</title>
+    <title>Kea's Bakery | Fresh Artisan Breads, Cakes & Cookies Menu</title>
+    <meta name="description" content="Explore Kea's Bakery menu featuring freshly baked artisan breads, custom cakes, and delicious cookies. Family recipes made daily in Cape Town.">
+    <meta name="keywords" content="Kea's Bakery, Cape Town bakery, artisan bread, custom cakes, fresh cookies, bakery menu, South African bakery">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Menu Page Specific Styles */
+        .menu-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .search-bar {
+            display: flex;
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .search-bar input {
+            padding: 12px 20px;
+            width: 100%;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px 0 0 25px;
+            font-size: 16px;
+        }
+
+        .search-btn, .filter-btn {
+            background-color: #8d6e63;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+        }
+
+        .search-btn {
+            border-radius: 0 25px 25px 0;
+        }
+
+        .filter-btn {
+            border-radius: 25px;
+        }
+
+        .filter-options {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #priceFilter {
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+        }
+
+        .category-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .image-gallery {
+            position: relative;
+        }
+
+        .view-gallery-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(141, 110, 99, 0.8);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .nutrition-info {
+            display: flex;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .diet-tag, .size-tag {
+            background-color: #ffab91;
+            color: #5d4037;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .item-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .inquire-btn, .add-to-cart-btn {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            min-width: 120px;
+        }
+
+        .inquire-btn {
+            background-color: #8d6e63;
+            color: white;
+        }
+
+        .add-to-cart-btn {
+            background-color: #ffab91;
+            color: #5d4037;
+        }
+
+        .quantity-selector {
+            margin: 1rem 0;
+        }
+
+        .qty-select {
+            padding: 8px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .cart-summary {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .remove-item {
+            background-color: #ff5252;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .checkout-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .lightbox-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            max-width: 90%;
+            max-height: 90%;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .form-message {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4caf50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 4px;
+            z-index: 1001;
+            display: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-controls {
+                flex-direction: column;
+            }
+            .item-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -28,111 +325,343 @@
     <!-- Page Title -->
     <section class="page-title">
         <div class="container">
-            <h2>Our Menu</h2>
-            <p>Freshly baked goods made daily with the finest ingredients</p>
+            <h1>Our Bakery Menu</h1>
+            <p>Freshly baked goods made daily with the finest ingredients in Cape Town</p>
         </div>
     </section>
 
     <!-- Menu Content -->
     <section class="menu-content">
         <div class="container">
+            <!-- Search and Filter Section -->
+            <div class="menu-controls">
+                <div class="search-bar">
+                    <input type="text" id="menuSearch" placeholder="Search menu items... (e.g., chocolate, bread, cake)">
+                    <button id="searchBtn" class="search-btn">Search</button>
+                </div>
+                <div class="filter-options">
+                    <select id="priceFilter">
+                        <option value="">Filter by Price</option>
+                        <option value="0-50">R0 - R50</option>
+                        <option value="51-100">R51 - R100</option>
+                        <option value="101-500">R101 - R500</option>
+                        <option value="501+">R501+</option>
+                    </select>
+                    <button id="resetFilters" class="filter-btn">Reset Filters</button>
+                </div>
+            </div>
+
+            <!-- Menu Categories with Enhanced Tabs -->
             <div class="menu-categories">
-                <button class="category-btn active" data-target="breads">Breads</button>
-            
-                <button class="category-btn" data-target="cakes">Cakes</button>
-                <button class="category-btn" data-target="cookies">Cookies</button>
+                <button class="category-btn active" data-target="breads">
+                    <span class="category-icon">🍞</span>
+                    Artisan Breads
+                </button>
+                <button class="category-btn" data-target="cakes">
+                    <span class="category-icon">🎂</span>
+                    Custom Cakes
+                </button>
+                <button class="category-btn" data-target="cookies">
+                    <span class="category-icon">🍪</span>
+                    Fresh Cookies
+                </button>
             </div>
             
+            <!-- Breads Category -->
             <div class="tab-content active" id="breads">
+                <div class="category-description">
+                    <h2>Artisan Breads</h2>
+                    <p>Handcrafted daily using traditional baking methods and the finest local ingredients</p>
+                </div>
                 <div class="menu-items">
-                    <div class="menu-item">
-                        <img src="Images/Peanut-Butter-Bread.jpg" alt="Peanut butter bread">
+                    <div class="menu-item" data-category="bread" data-price="25" data-name="peanut butter bread">
+                        <div class="image-gallery">
+                            <img src="Images/Peanut-Butter-Bread.jpg" alt="Fresh Peanut Butter Bread - Artisan bakery bread with peanut butter" class="gallery-image">
+                            <button class="view-gallery-btn">View Gallery</button>
+                        </div>
                         <div class="menu-item-content">
-                            <h3>Peanut butter Bread</h3>
-                            <p>Our signature bread with a crisp crust and tangy, airy interior. Made with a 50-year-old starter.</p>
+                            <h3>Peanut Butter Bread</h3>
+                            <p>Our signature bread with a crisp crust and soft, airy interior. Perfect for sandwiches or toast.</p>
+                            <div class="nutrition-info">
+                                <span class="diet-tag">Vegetarian</span>
+                                <span class="diet-tag">Contains Nuts</span>
+                            </div>
                             <p class="price">R25.00</p>
+                            <div class="item-actions">
+                                <button class="inquire-btn" data-item="Peanut Butter Bread">Inquire About Order</button>
+                                <button class="add-to-cart-btn" data-item="Peanut Butter Bread" data-price="25.00">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="menu-item">
-                        <img src="Images/R.jpg" alt="Milk and Honey Bread">
+                    
+                    <div class="menu-item" data-category="bread" data-price="35" data-name="milk and honey bread">
+                        <div class="image-gallery">
+                            <img src="Images/R.jpg" alt="Milk and Honey Bread - Fresh baked bread with milk and honey" class="gallery-image">
+                            <button class="view-gallery-btn">View Gallery</button>
+                        </div>
                         <div class="menu-item-content">
                             <h3>Milk and Honey Bread</h3>
-                            <p>Nutritious whole wheat flour with a touch of local honey for subtle sweetness.</p>
+                            <p>Nutritious whole wheat flour with a touch of local honey for subtle sweetness and creamy texture.</p>
+                            <div class="nutrition-info">
+                                <span class="diet-tag">Vegetarian</span>
+                            </div>
                             <p class="price">R35.00</p>
+                            <div class="item-actions">
+                                <button class="inquire-btn" data-item="Milk and Honey Bread">Inquire About Order</button>
+                                <button class="add-to-cart-btn" data-item="Milk and Honey Bread" data-price="35.00">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="menu-item">
-                        <img src="Images/1-hour-sandwich-bread-blog.jpg" alt="Sandwhich Bread">
+                    
+                    <div class="menu-item" data-category="bread" data-price="20" data-name="sandwich bread">
+                        <div class="image-gallery">
+                            <img src="Images/1-hour-sandwich-bread-blog.jpg" alt="Fresh Sandwich Bread - Soft white bread perfect for sandwiches" class="gallery-image">
+                            <button class="view-gallery-btn">View Gallery</button>
+                        </div>
                         <div class="menu-item-content">
-                            <h3>Sandwhich Bread</h3>
-                            <p>Swirled with cinnamon and plump raisins, perfect for toast.</p>
+                            <h3>Sandwich Bread</h3>
+                            <p>Soft, fluffy white bread perfect for your daily sandwiches and toast. Freshly baked every morning.</p>
+                            <div class="nutrition-info">
+                                <span class="diet-tag">Vegetarian</span>
+                            </div>
                             <p class="price">R20.00</p>
+                            <div class="item-actions">
+                                <button class="inquire-btn" data-item="Sandwich Bread">Inquire About Order</button>
+                                <button class="add-to-cart-btn" data-item="Sandwich Bread" data-price="20.00">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-           
-            
+            <!-- Cakes Category -->
             <div class="tab-content" id="cakes">
+                <div class="category-description">
+                    <h2>Custom Cakes</h2>
+                    <p>Celebrate your special occasions with our beautifully designed custom cakes. Order 72 hours in advance.</p>
+                </div>
                 <div class="menu-items">
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Chocolate Cake">
+                    <div class="menu-item" data-category="cake" data-price="450" data-name="triple chocolate cake">
+                        <div class="image-gallery">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Triple Chocolate Cake - Rich chocolate cake with fudge filling" class="gallery-image">
+                            <button class="view-gallery-btn">View Gallery</button>
+                        </div>
                         <div class="menu-item-content">
-                            <h3>Triple Chocolate</h3>
-                            <p>Chocolate cake layers with chocolate fudge filling and chocolate buttercream.</p>
+                            <h3>Triple Chocolate Cake</h3>
+                            <p>Decadent chocolate cake layers with chocolate fudge filling and rich chocolate buttercream frosting.</p>
+                            <div class="nutrition-info">
+                                <span class="diet-tag">Vegetarian</span>
+                                <span class="size-tag">Serves 8-10</span>
+                            </div>
                             <p class="price">R450.00 (whole)</p>
+                            <div class="item-actions">
+                                <button class="inquire-btn" data-item="Triple Chocolate Cake">Customize Order</button>
+                                <button class="add-to-cart-btn" data-item="Triple Chocolate Cake" data-price="450.00">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Carrot Cake">
+                    
+                    <div class="menu-item" data-category="cake" data-price="550" data-name="carrot cake">
+                        <div class="image-gallery">
+                            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Carrot Cake - Spiced carrot cake with cream cheese frosting" class="gallery-image">
+                            <button class="view-gallery-btn">View Gallery</button>
+                        </div>
                         <div class="menu-item-content">
                             <h3>Carrot Cake</h3>
-                            <p>Spiced carrot cake with raisins, walnuts, and cream cheese frosting.</p>
+                            <p>Spiced carrot cake with raisins, walnuts, and creamy cream cheese frosting. A classic favorite.</p>
+                            <div class="nutrition-info">
+                                <span class="diet-tag">Vegetarian</span>
+                                <span class="diet-tag">Contains Nuts</span>
+                                <span class="size-tag">Serves 10-12</span>
+                            </div>
                             <p class="price">R550.00 (whole)</p>
+                            <div class="item-actions">
+                                <button class="inquire-btn" data-item="Carrot Cake">Customize Order</button>
+                                <button class="add-to-cart-btn" data-item="Carrot Cake" data-price="550.00">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="menu-item">
-                        <img src="Images/33c9f7ecb35642043318a7c80c58c489.jpg" alt="Red Velvet Cake">
+                    
+                    <div class="menu-item" data-category="cake" data-price="650" data-name="red velvet cake">
+                        <div class="image-gallery">
+                            <img src="Images/33c9f7ecb35642043318a7c80c58c489.jpg" alt="Red Velvet Cake - Classic red velvet with cream cheese frosting" class="gallery-image">
+                            <button class="view-gallery-btn">View Gallery</button>
+                        </div>
                         <div class="menu-item-content">
-                            <h3>Red Velvet</h3>
-                            <p>Classic red velvet with cream cheese frosting and decorative piping.</p>
+                            <h3>Red Velvet Cake</h3>
+                            <p>Classic red velvet cake with smooth cream cheese frosting and beautiful decorative piping.</p>
+                            <div class="nutrition-info">
+                                <span class="diet-tag">Vegetarian</span>
+                                <span class="size-tag">Serves 12-14</span>
+                            </div>
                             <p class="price">R650.00 (whole)</p>
+                            <div class="item-actions">
+                                <button class="inquire-btn" data-item="Red Velvet Cake">Customize Order</button>
+                                <button class="add-to-cart-btn" data-item="Red Velvet Cake" data-price="650.00">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             
+            <!-- Cookies Category -->
             <div class="tab-content" id="cookies">
+                <div class="category-description">
+                    <h2>Fresh Cookies</h2>
+                    <p>Delicious cookies baked fresh daily. Perfect for snacks, gifts, or special treats.</p>
+                </div>
                 <div class="menu-items">
-                    <div class="menu-item">
-                        <img src="Images/th.jpg" alt="Chocolate Chip Cookies">
+                    <div class="menu-item" data-category="cookie" data-price="2" data-name="chocolate chip cookies">
+                        <div class="image-gallery">
+                            <img src="Images/th.jpg" alt="Chocolate Chip Cookies - Classic cookies with chocolate chunks" class="gallery-image">
+                            <button class="view-gallery-btn">View Gallery</button>
+                        </div>
                         <div class="menu-item-content">
-                            <h3>Chocolate Chip</h3>
-                            <p>Classic cookie with semi-sweet and milk chocolate chunks.</p>
+                            <h3>Chocolate Chip Cookies</h3>
+                            <p>Classic cookie with semi-sweet and milk chocolate chunks. Crispy edges with a soft center.</p>
+                            <div class="nutrition-info">
+                                <span class="diet-tag">Vegetarian</span>
+                            </div>
                             <p class="price">R2.00 each / R25.00 dozen</p>
+                            <div class="quantity-selector">
+                                <label for="chocolateChipQty">Quantity:</label>
+                                <select id="chocolateChipQty" class="qty-select">
+                                    <option value="1">1 cookie (R2.00)</option>
+                                    <option value="6">6 cookies (R12.00)</option>
+                                    <option value="12">12 cookies (R25.00)</option>
+                                </select>
+                            </div>
+                            <div class="item-actions">
+                                <button class="inquire-btn" data-item="Chocolate Chip Cookies">Bulk Order</button>
+                                <button class="add-to-cart-btn" data-item="Chocolate Chip Cookies" data-price="2.00">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="menu-item">
-                        <img src="Images/th (1).jpg" alt="Sugar Cookies">
+                    
+                    <div class="menu-item" data-category="cookie" data-price="2.5" data-name="sugar cookies">
+                        <div class="image-gallery">
+                            <img src="Images/th (1).jpg" alt="Sugar Cookies - Simple 3-ingredient sugar cookies" class="gallery-image">
+                            <button class="view-gallery-btn">View Gallery</button>
+                        </div>
                         <div class="menu-item-content">
                             <h3>Sugar Cookies</h3>
-                            <p>Easy sugar cookies with only 3-ingredients</p>
+                            <p>Easy sugar cookies made with only 3 simple ingredients. Light, sweet, and perfectly crisp.</p>
+                            <div class="nutrition-info">
+                                <span class="diet-tag">Vegetarian</span>
+                            </div>
                             <p class="price">R2.50 each / R30.00 dozen</p>
+                            <div class="quantity-selector">
+                                <label for="sugarCookieQty">Quantity:</label>
+                                <select id="sugarCookieQty" class="qty-select">
+                                    <option value="1">1 cookie (R2.50)</option>
+                                    <option value="6">6 cookies (R15.00)</option>
+                                    <option value="12">12 cookies (R30.00)</option>
+                                </select>
+                            </div>
+                            <div class="item-actions">
+                                <button class="inquire-btn" data-item="Sugar Cookies">Bulk Order</button>
+                                <button class="add-to-cart-btn" data-item="Sugar Cookies" data-price="2.50">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="menu-item">
-                        <img src="Images/th (2).jpg" alt="Peanut Butter Cookies">
+                    
+                    <div class="menu-item" data-category="cookie" data-price="3" data-name="peanut butter cookies">
+                        <div class="image-gallery">
+                            <img src="Images/th (2).jpg" alt="Peanut Butter Cookies - Rich peanut butter cookies with sugar" class="gallery-image">
+                            <button class="view-gallery-btn">View Gallery</button>
+                        </div>
                         <div class="menu-item-content">
                             <h3>Peanut Butter Cookies</h3>
-                            <p>Peanut butter and a combination of white and brown sugar</p>
-                            <p class="price">R3.00 / R32.00 dozen</p>
+                            <p>Rich peanut butter cookies made with a combination of white and brown sugar for perfect sweetness.</p>
+                            <div class="nutrition-info">
+                                <span class="diet-tag">Vegetarian</span>
+                                <span class="diet-tag">Contains Nuts</span>
+                            </div>
+                            <p class="price">R3.00 each / R32.00 dozen</p>
+                            <div class="quantity-selector">
+                                <label for="peanutButterQty">Quantity:</label>
+                                <select id="peanutButterQty" class="qty-select">
+                                    <option value="1">1 cookie (R3.00)</option>
+                                    <option value="6">6 cookies (R18.00)</option>
+                                    <option value="12">12 cookies (R32.00)</option>
+                                </select>
+                            </div>
+                            <div class="item-actions">
+                                <button class="inquire-btn" data-item="Peanut Butter Cookies">Bulk Order</button>
+                                <button class="add-to-cart-btn" data-item="Peanut Butter Cookies" data-price="3.00">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <h3>Your Order</h3>
+                <div id="cartItems" class="cart-items">
+                    <p class="empty-cart">Your cart is empty</p>
+                </div>
+                <div class="cart-total">
+                    <strong>Total: R<span id="cartTotal">0.00</span></strong>
+                </div>
+                <button id="checkoutBtn" class="checkout-btn" disabled>Proceed to Checkout</button>
             </div>
         </div>
     </section>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <div class="lightbox-caption"></div>
+        </div>
+        <button class="lightbox-nav prev">&#10094;</button>
+        <button class="lightbox-nav next">&#10095;</button>
+    </div>
+
+    <!-- Inquiry Modal -->
+    <div id="inquiryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Product Inquiry</h2>
+            <form id="productInquiryForm">
+                <input type="hidden" id="inquiryProduct" name="product">
+                <div class="form-group">
+                    <label for="inquiryName">Name *</label>
+                    <input type="text" id="inquiryName" name="name" required>
+                    <div class="error-message" id="nameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="inquiryEmail">Email *</label>
+                    <input type="email" id="inquiryEmail" name="email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="inquiryPhone">Phone</label>
+                    <input type="tel" id="inquiryPhone" name="phone">
+                    <div class="error-message" id="phoneError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="inquiryQuantity">Desired Quantity</label>
+                    <input type="number" id="inquiryQuantity" name="quantity" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="inquiryDate">Preferred Date</label>
+                    <input type="date" id="inquiryDate" name="date">
+                </div>
+                <div class="form-group">
+                    <label for="inquiryMessage">Special Requests</label>
+                    <textarea id="inquiryMessage" name="message" placeholder="Any special dietary requirements or customization requests..."></textarea>
+                </div>
+                <button type="submit" class="btn">Submit Inquiry</button>
+            </form>
+            <div id="inquiryMessage" class="form-message"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
 
     <!-- Footer -->
     <footer>
@@ -146,8 +675,8 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact</h3>
-                    <p>55 St Georges Stret</p>
-                    <p>Union Castle. Cape Town</p>
+                    <p>55 St Georges Street</p>
+                    <p>Union Castle, Cape Town</p>
                     <p>(+27) 67 015 6614</p>
                 </div>
                 <div class="footer-section">
@@ -164,29 +693,6 @@
         </div>
     </footer>
 
-    <script>
-        // Menu category tabs
-        document.addEventListener('DOMContentLoaded', function() {
-            const categoryButtons = document.querySelectorAll('.category-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            categoryButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    categoryButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // Hide all tab contents
-                    tabContents.forEach(tab => tab.classList.remove('active'));
-                    
-                    // Show selected tab content
-                    const targetTab = this.getAttribute('data-target');
-                    document.getElementById(targetTab).classList.add('active');
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
