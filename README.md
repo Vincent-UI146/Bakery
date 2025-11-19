@@ -550,6 +550,13 @@ Payment Page - Secure checkout system
 
 ## REFERENCES
 
+CHRIS HOUSE, NOVEMBER 14, 2025 | CSS GRID LAYOUT GUIDE https://css-tricks.com/snippets/css/complete-guide-grid/ (Date accessed: 12 November 2025)
+
+GOOGLE MAPS, 2025 | MAPS JAVASCRIPT API https://developers.google.com/maps/documentation/javascript/overview (Date accessed: 10 November 2025)
+
+MOZ, 2025 | THE BEGINNER'S GUIDE TO SEO https://moz.com/beginners-guide-to-seo (Date accessed: 11 November 2025)
+
+WebAbility, 2025 | WHAT IS WEB ACCESSIBILITY INITIATIVE https://www.webability.io/compliance/wcag/wai-web-accessibility-initiative (Date accessed: 14 November 2025)
 
 
  
