@@ -1,55 +1,8 @@
 // Contact Page JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Google Maps
-    function initMap() {
-        const bakeryLocation = { lat: -33.9249, lng: 18.4241 }; // Cape Town coordinates
-        
-        const map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: bakeryLocation,
-            styles: [
-                {
-                    featureType: 'poi.business',
-                    stylers: [{ visibility: 'on' }]
-                },
-                {
-                    featureType: 'transit',
-                    elementType: 'labels.icon',
-                    stylers: [{ visibility: 'off' }]
-                }
-            ]
-        });
-
-        const marker = new google.maps.Marker({
-            position: bakeryLocation,
-            map: map,
-            title: 'Kea\'s Bakery',
-            icon: {
-                url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwIDM4LjVDMzAuMjE3OSAzOC41IDM4LjUgMzAuMjE3OSAzOC41IDIwQzM4LjUgOS43ODIxMSAzMC4yMTc5IDEuNSAyMCAxLjVDOS43ODIxMSAxLjUgMS41IDkuNzgyMTEgMS41IDIwQzEuNSAzMC4yMTc5IDkuNzgyMTEgMzguNSAyMCAzOC41WiIgZmlsbD0iIzhENkU2MyIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik0xNCAxNkMxNCAxNS40NDc3IDE0LjQ0NzcgMTUgMTUgMTVIMjVDMjUuNTUyMyAxNSAyNiAxNS40NDc3IDI2IDE2VjI0QzI2IDI0LjU1MjMgMjUuNTUyMyAyNSAyNSAyNUgxNUMxNC40NDc3IDI1IDE0IDI0LjU1MjMgMTQgMjRWMTZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K',
-                scaledSize: new google.maps.Size(40, 40)
-            }
-        });
-
-        const infoWindow = new google.maps.InfoWindow({
-            content: `
-                <div style="padding: 10px;">
-                    <h3 style="margin: 0 0 10px 0; color: #8d6e63;">Kea's Bakery</h3>
-                    <p style="margin: 5px 0;">55 St Georges Street</p>
-                    <p style="margin: 5px 0;">Union Castle, Cape Town, 8018</p>
-                    <p style="margin: 5px 0;">📞 (+27) 67 015 6614</p>
-                    <p style="margin: 5px 0;">🕒 Mon-Fri: 6am-6pm<br>Sat: 7am-4pm<br>Sun: 8am-2pm</p>
-                </div>
-            `
-        });
-
-        marker.addListener('click', () => {
-            infoWindow.open(map, marker);
-        });
-
-        // Open info window by default
-        infoWindow.open(map, marker);
-    }
-
+    // Initialize location map
+    initMap();
+    
     // Character counter for message textarea
     const messageTextarea = document.getElementById('message');
     const charCount = document.getElementById('charCount');
@@ -279,23 +232,69 @@ document.addEventListener('DOMContentLoaded', function() {
             toast.style.display = 'none';
         }, 3000);
     }
+});
 
-    // Initialize map when Google Maps API is loaded
-    if (typeof google !== 'undefined') {
-        initMap();
-    } else {
-        // Fallback if Google Maps fails to load
-        document.getElementById('map').innerHTML = `
-            <div style="height: 100%; display: flex; align-items: center; justify-content: center; background: #f5f5f5;">
-                <div style="text-align: center; padding: 20px;">
-                    <h3 style="color: #8d6e63; margin-bottom: 10px;">Kea's Bakery</h3>
-                    <p style="margin: 5px 0;">55 St Georges Street</p>
-                    <p style="margin: 5px 0;">Union Castle, Cape Town, 8018</p>
-                    <p style="margin: 5px 0;">📞 (+27) 67 015 6614</p>
+// Initialize map with specific location link
+function initMap() {
+    const mapContainer = document.getElementById('map');
+    if (!mapContainer) return;
+
+    // Create a clickable location link with the specific Google Maps URL
+    const locationHTML = `
+        <div style="height: 100%; display: flex; align-items: center; justify-content: center; background: #f5f5f5; border-radius: 8px;">
+            <div style="text-align: center; padding: 30px;">
+                <h3 style="color: #8d6e63; margin-bottom: 15px;">📍 Kea's Bakery Location</h3>
+                <p style="margin: 10px 0; font-size: 16px;">
+                    <strong>Address:</strong><br>
+                    55 St Georges Street<br>
+                    Union Castle, Cape Town, 8018
+                </p>
+                <p style="margin: 10px 0; font-size: 16px;">
+                    <strong>Phone:</strong> (+27) 67 015 6614
+                </p>
+                <p style="margin: 10px 0; font-size: 16px;">
+                    <strong>Hours:</strong><br>
+                    Mon-Fri: 6am-6pm<br>
+                    Sat: 7am-4pm<br>
+                    Sun: 8am-2pm
+                </p>
+                <div style="margin-top: 20px;">
+                    <a href="https://maps.app.goo.gl/bRfjqCrcDjPs2VBn6" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       style="display: inline-block; background-color: #8d6e63; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; transition: background-color 0.3s; margin: 5px;">
+                       📍 Open in Google Maps
+                    </a>
+                    <a href="https://maps.apple.com/?q=Kea's+Bakery+Cape+Town&ll=-33.9249,18.4241" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       style="display: inline-block; background-color: #000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; transition: background-color 0.3s; margin: 5px;">
+                       🍎 Open in Apple Maps
+                    </a>
+                </div>
+                <div style="margin-top: 20px; padding: 15px; background-color: #e8f5e9; border-radius: 6px;">
+                    <p style="margin: 0; color: #2e7d32; font-size: 14px;">
+                        💡 <strong>Tip:</strong> Click the buttons above to get directions to our bakery
+                    </p>
                 </div>
             </div>
-        `;
+        </div>
+    `;
+
+    mapContainer.innerHTML = locationHTML;
+}
+
+// Initialize the map when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Remove the Google Maps API script since we're not using it anymore
+    const googleMapsScript = document.querySelector('script[src*="maps.googleapis.com"]');
+    if (googleMapsScript) {
+        googleMapsScript.remove();
     }
+    
+    // Initialize our custom map
+    initMap();
+});
 });
 
 // Menu Page JavaScript
@@ -687,13 +686,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Load cart from session storage
     const cart = loadCartFromStorage();
-    if (cart.length === 0) {
-        showToast('Your cart is empty. Redirecting to menu...', 'error');
-        setTimeout(() => {
-            window.location.href = 'menu.html';
-        }, 2000);
-        return;
-    }
     
     // Display order summary
     displayOrderSummary(cart);
@@ -734,6 +726,32 @@ function displayOrderSummary(cart) {
     
     let subtotal = 0;
     
+    if (cart.length === 0) {
+        // Show empty cart message instead of redirecting
+        orderItems.innerHTML = `
+            <div class="order-item">
+                <div>
+                    <strong>No items in cart</strong>
+                    <div>Please add items from the menu to proceed with payment</div>
+                </div>
+            </div>
+        `;
+        
+        // Disable payment button
+        const payButton = document.getElementById('payButton');
+        if (payButton) {
+            payButton.disabled = true;
+            payButton.textContent = 'Add Items to Cart First';
+        }
+        
+        // Set totals to zero
+        subtotalElement.textContent = 'R0.00';
+        deliveryElement.textContent = 'R0.00';
+        totalElement.textContent = 'R0.00';
+        
+        return;
+    }
+    
     // Add each item to the order summary
     cart.forEach(item => {
         subtotal += item.total;
@@ -762,6 +780,16 @@ function displayOrderSummary(cart) {
     // Store totals for later use
     sessionStorage.setItem('orderSubtotal', subtotal.toFixed(2));
     sessionStorage.setItem('orderTotal', total.toFixed(2));
+    
+    // Enable payment button if it was disabled
+    const payButton = document.getElementById('payButton');
+    if (payButton && payButton.disabled) {
+        payButton.disabled = false;
+        const btnText = payButton.querySelector('.btn-text');
+        if (btnText) {
+            btnText.textContent = 'Complete Payment';
+        }
+    }
 }
 
 function setupEventListeners() {
@@ -846,17 +874,26 @@ function showPaymentForm(method) {
     
     // Update pay button text based on method
     const payButton = document.getElementById('payButton');
-    if (payButton) {
+    if (payButton && !payButton.disabled) {
         const btnText = payButton.querySelector('.btn-text');
-        if (method === 'cash') {
-            btnText.textContent = 'Confirm Order';
-        } else {
-            btnText.textContent = 'Complete Payment';
+        if (btnText) {
+            if (method === 'cash') {
+                btnText.textContent = 'Confirm Order';
+            } else {
+                btnText.textContent = 'Complete Payment';
+            }
         }
     }
 }
 
 function processPayment() {
+    // Check if cart is empty
+    const cart = loadCartFromStorage();
+    if (cart.length === 0) {
+        showToast('Your cart is empty. Please add items from the menu first.', 'error');
+        return;
+    }
+    
     // Validate form
     if (!validateForm()) {
         return;

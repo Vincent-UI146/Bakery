@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage - Highest Priority -->
+  <url>
+    <loc>https://keasbakery.co.za/</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://keasbakery.co.za/" />
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://keasbakery.co.za/" />
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://keasbakery.co.za/about.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://keasbakery.co.za/about.html" />
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://keasbakery.co.za/about.html" />
+  </url>
+
+  <!-- Menu Page - High Priority -->
+  <url>
+    <loc>https://keasbakery.co.za/menu.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://keasbakery.co.za/menu.html" />
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://keasbakery.co.za/menu.html" />
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://keasbakery.co.za/contact.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://keasbakery.co.za/contact.html" />
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://keasbakery.co.za/contact.html" />
+  </url>
+
+  <!-- Payment Page -->
+  <url>
+    <loc>https://keasbakery.co.za/payment.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://keasbakery.co.za/payment.html" />
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://keasbakery.co.za/payment.html" />
+  </url>
+
+  <!-- Product Category Pages -->
+  <url>
+    <loc>https://keasbakery.co.za/menu.html#breads</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://keasbakery.co.za/menu.html#breads" />
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://keasbakery.co.za/menu.html#breads" />
+  </url>
+
+  <url>
+    <loc>https://keasbakery.co.za/menu.html#cakes</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://keasbakery.co.za/menu.html#cakes" />
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://keasbakery.co.za/menu.html#cakes" />
+  </url>
+
+  <url>
+    <loc>https://keasbakery.co.za/menu.html#cookies</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://keasbakery.co.za/menu.html#cookies" />
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://keasbakery.co.za/menu.html#cookies" />
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://keasbakery.co.za/privacy-policy.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://keasbakery.co.za/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://keasbakery.co.za/privacy-policy.html" />
+  </url>
+
+  <url>
+    <loc>https://keasbakery.co.za/terms-of-service.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://keasbakery.co.za/terms-of-service.html" />
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://keasbakery.co.za/terms-of-service.html" />
+  </url>
+
+</urlset>

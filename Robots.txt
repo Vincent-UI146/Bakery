@@ -1,0 +1,59 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://keasbakery.co.za/sitemap.xml
+
+# Allow all main pages
+Allow: /$
+Allow: /about.html$
+Allow: /menu.html$
+Allow: /contact.html$
+Allow: /payment.html$
+
+# Allow CSS and JavaScript
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /logs/
+
+# Disallow search query parameters
+Disallow: /*?*
+Disallow: /*&*
+
+# Allow specific parameters for menu filtering
+Allow: /menu.html#breads
+Allow: /menu.html#cakes
+Allow: /menu.html#cookies
+
+# Crawl delay (optional - adjust based on server capacity)
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Crawl-delay: 5
+
+User-agent: YandexBot
+Crawl-delay: 3
